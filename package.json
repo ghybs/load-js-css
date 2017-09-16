@@ -1,0 +1,20 @@
+{
+  "name": "load-js-css",
+  "version": "0.0.1",
+  "description": "Dynamically load external JavaScript and/or Stylesheets into your page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "js",
+    "css",
+    "load",
+    "dynamic",
+    "insert",
+    "assets",
+    "resources"
+  ],
+  "author": "Boris Seang",
+  "license": "ISC"
+}
