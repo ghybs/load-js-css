@@ -138,7 +138,9 @@
 
   function _setAttributes(element, attributes) {
     for (var attributeName in attributes) {
-      element.setAttribute(attributeName, attributes[attributeName]);
+      if (attributes.hasOwnProperty(attributeName)) {
+        element.setAttribute(attributeName, attributes[attributeName]);
+      }
     }
   }
 
