@@ -8,9 +8,6 @@
 }(this, (function (exports) {
   'use strict';
 
-  // This library assumes it is loaded in a browser, hence `document` is defined.
-  var head = document.head || document.getElementsByTagName('head')[0];
-
   /**
    * Load the list of resources.
    * ResourceSpec is a JsAssetSpec or a CssAssetSpec with expected following extra key(s):
@@ -96,7 +93,7 @@
       }
     }
 
-    head.appendChild(script);
+    _getHead().appendChild(script);
   }
 
   /**
@@ -120,7 +117,7 @@
       _setAttributes(link, options.attrs)
     }
 
-    head.appendChild(link);
+    _getHead().appendChild(link);
 
     // Workaround the absence of error event on <link> resources.
     if (typeof cb === 'function') {
@@ -168,6 +165,11 @@
       this.onreadystatechange = null;
       cb(null, script) // there is no way to catch loading errors in IE8
     }
+  }
+
+  function _getHead() {
+    // This library assumes it is loaded in a browser, hence `document` is defined.
+    return document.head || document.getElementsByTagName('head')[0];
   }
 
 
