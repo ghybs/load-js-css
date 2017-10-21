@@ -11,6 +11,16 @@
   // This library assumes it is loaded in a browser, hence `document` is defined.
   var head = document.head || document.getElementsByTagName('head')[0];
 
+  /**
+   * Load the list of resources.
+   * ResourceSpec is a JsAssetSpec or a CssAssetSpec with expected following extra key(s):
+   * - type <'script'|'stylesheet'> string specifying whether the asset is a (CSS) stylesheet or a (JS) script.
+   * OptionsDict is a Dictionary with possible following key(s):
+   * - delayScripts <Number|false> duration after which scripts should be loaded (after stylesheets), typically when
+   *     script execution depends on stylesheet being already applied.
+   * @param resources <ResourceSpec[]>
+   * @param options <OptionsDict>
+   */
   function loadList(resources, options) {
     options = options || {};
 
@@ -49,9 +59,16 @@
     }
   }
 
-  // Adapted from load-script
-  // https://github.com/eldargab/load-script
-  // MIT License
+  /**
+   * Load a (JavaScript) script asset.
+   * options is a JsAssetSpec.
+   * JsAssetSpec is an Object with expected following keys:
+   * - src <String> URL where to fetch the asset from.
+   * - async? <Boolean> if true, the script will be executed in any order; if false, it will be executed in insertion order.
+   * - attrs? <AttributesDict> Dictionary of attributes (e.g. to specify SRI - integrity and crossorigin).
+   * Adapted from load-script (https://github.com/eldargab/load-script, MIT License).
+   * @param options <JsAssetSpec>
+   */
   function loadJs(options) {
     var script = document.createElement('script'),
         src = options.src || options.path || options.href,
@@ -82,6 +99,14 @@
     head.appendChild(script);
   }
 
+  /**
+   * Load a (CSS) stylesheet asset.
+   * options is a CssAssetSpec.
+   * CssAssetSpec is an Object with expected following keys:
+   * - href <String> URL where to fetch the asset from.
+   * - attrs? <AttributesDict> Dictionary of attributes (e.g. to specify SRI - integrity and crossorigin).
+   * @param options <CssAssetSpec>
+   */
   function loadCss(options) {
     var link = document.createElement('link'),
         href = options.href || options.path || options.src,
