@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2017 Boris Seang
+ * Load JS CSS
+ * ISC License
+ */
 // Adapted from Rollup
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined'
