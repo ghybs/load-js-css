@@ -26,8 +26,8 @@ Hash map / dictionary with following keys:
 | :--- | :---- | :---------- |
 | **type** | `"script"` or `"stylesheet"` | Used by `loadJsCss.list` to determine the type of resource. Must be specified for `loadJsCss.list` |
 | **path** | String | URL (relative or absolute) to the resource. When relative, relative to the current script location. |
-| **attrs** | Object | Hash map / dictionary of extra attributes to apply to the `<script>` or `<link>` tag. E.g. for SRI (integrity and crossorigin attributes). |
-| **async** | Boolean | For script only. Default: `false` (in order to emulate `defer` attribute and maintain a more predictable behaviour, by ensuring execution order is the same as list order) |
+| **attrs**? | Object | Hash map / dictionary of extra attributes to apply to the `<script>` or `<link>` tag. E.g. for SRI (integrity and crossorigin attributes). |
+| **async**? | Boolean | For script only. Default: `false` (in order to emulate `defer` attribute and maintain a more predictable behaviour, by ensuring execution order is the same as list order) |
 
 
 ### listOptions
