@@ -36,7 +36,7 @@ Hash map / dictionary with following keys:
 
 | Key  | Type  | Description |
 | :--- | :---- | :---------- |
-| **delayScripts** | Number or `false` | Defer loading of scripts after stylesheets, by the given duration (in milliseconds). Useful to try to delay scripts execution _after_ stylesheets are ready (but not bullet proof). |
+| **delayScripts**? | Number or `false` | Defer loading of scripts after stylesheets, by the given duration (in milliseconds). Useful to try to delay scripts execution _after_ stylesheets are ready (but not bullet proof). |
 
 
 
