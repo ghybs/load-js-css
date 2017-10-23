@@ -1,6 +1,6 @@
 {
   "name": "load-js-css",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Dynamically load external JavaScript and/or Stylesheets into your page",
   "main": "index.js",
   "scripts": {
